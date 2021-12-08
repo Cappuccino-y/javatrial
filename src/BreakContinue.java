@@ -1,4 +1,4 @@
-package exercise;
+import java.util.List;
 
 public class BreakContinue {
     public static void horse(String []a) {
@@ -25,12 +25,16 @@ public class BreakContinue {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] ars) {
         String[] b = {"cat", "dog", "laser horse", "ketchup", "horse", "horbse"};
+
         int[] a = {1, 2, -3, 4, 5, 4};
         int n = 3;
         windowPosSum(a, n);
         System.out.println(java.util.Arrays.toString(a));
-        horse(b);
+        String qwe="31232";
+        String qwer="23";
+        String we1=qwe + qwer;
+        System.out.println(we1+a[0]);
     }
 }

@@ -1,5 +1,3 @@
-package exercise;
-
 public class Func {
     public static int max (int x, int y){
         if (x>y){
@@ -20,5 +18,9 @@ public class Func {
         System.out.println(max(7,2));
         double[] numbers = new double[]{4, 7.0, 10};
         System.out.println(numbers.length);
+        SLList C= new SLList(234);
+        C.addFirst(32);
+        System.out.println(C.get(1));
+
     }
 }
