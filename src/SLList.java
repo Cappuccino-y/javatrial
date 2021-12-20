@@ -1,22 +1,24 @@
-public class SLList {
+public class SLList<optional> {
     private IntNode sentinel;
     private int size_num;
-    public SLList(int x){
-        sentinel = new IntNode(231,null);
+    private IntNode Last;
+    private optional sentinel_value;
+    public SLList(optional x){
+        sentinel = new IntNode(sentinel_value,null);
         sentinel.next =new IntNode(x,null);
         size_num=1;
     }
     public SLList(){
-        sentinel = new IntNode(231,null);
+        sentinel = new IntNode(sentinel_value,null);
         size_num=0;
     }
 
-    public void addLast(int x){
+    public void addFirst(optional x){
         sentinel.next = new IntNode(x, sentinel.next);
         size_num=size_num+1;
     }
 
-    public void addFirst(int x){
+    public void addLast(optional x){
         IntNode pointer = sentinel;
         while (pointer.next!=null){
             pointer = pointer.next;
@@ -29,26 +31,26 @@ public class SLList {
         return size_num;
     }
 
-    public int get(int i){
+    public optional get(int i){
         return sentinel.next.get(i);
     }
 
     public static void main(String[] args) {
         SLList C= new SLList(234);
         C.addLast(32);
-        C.addFirst(26);
-        C.addFirst(2312);
-        C.addFirst(2312);
-        C.addFirst(2312);
-        C.addFirst(2312);
-        C.addFirst(2312);
+        C.addLast(26);
+        C.addLast(2312);
+        C.addLast(2312);
+        C.addLast(2312);
+        C.addLast(2312);
+        C.addLast(2312);
         System.out.println(C.size());
     }
 
-    private static class IntNode {
-        public int item;
+    private class IntNode {
+        public optional item;
         public IntNode next;
-        public IntNode(int f,IntNode r){
+        public IntNode(optional f,IntNode r){
             item =f;
             next=r;
         }
@@ -71,33 +73,32 @@ public class SLList {
                 return 1+next.size();
             }
         }
-        public int get(int i){
-            if (i==size()-1){
+        public optional get(int i){
+            if (i==0){
                 return item;
             }
             else{
-                return next.get(i);
+                return next.get(i-1);
             }
         }
-        public static IntNode incrList(IntNode L,int x){
-            IntNode temp = new IntNode(L.item +x,null );
-            for(int i=1; i<L.size();i++){
-                temp = new IntNode (L.get(i)+x,temp);
-            }
-            return temp;
-        }
-        /*super magical huh*/
-        public static IntNode dincrList(IntNode L, int x){
-            if (L.next==null){
-                L.item = L.item +x;
-                return L;
-            }
-            else {
-                L.item =L.item +x;
-                dincrList(L.next,x);
-                return L;
-            }
+//        public static IntNode incrList(IntNode L,int x){
+//            IntNode temp = new IntNode(L.item +x,null );
+//            for(int i=1; i<L.size();i++){
+//                temp = new IntNode (L.get(i)+x,temp);
+//            }
+//            return temp;
+//        }
+//        /*super magical huh*/
+//        public static IntNode dincrList(IntNode L, int x){
+//            if (L.next==null){
+//                L.item = L.item +x;
+//                return L;
+//            }
+//            else {
+//                L.item =L.item +x;
+//                dincrList(L.next,x);
+//                return L;
+//            }
         }
     }
 
-}

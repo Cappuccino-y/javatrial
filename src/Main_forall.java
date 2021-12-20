@@ -1,13 +1,15 @@
 public class Main_forall {
     public static void main(String[] args) {
-        SLList A = new SLList();
-        A.addFirst(32);
-        A.addFirst(21312);
-        A.addFirst(231);
-        A.addLast(23);
-        A.addLast(23);
-        A.addLast(23);
+        SLList<String> A = new SLList("asd");
+        SLList<Integer> B = new SLList(123);
 
-        System.out.println(A.get(4));
+        A.addLast("Aslyy");
+        A.addFirst("aswqeq");
+        A.addFirst("123sd");
+
+        int[][] ck;
+        ck = new int[2][2];
+        ck[0]= new int[]{3,4};
+        System.out.println(ck[0][1]);
     }
 }
