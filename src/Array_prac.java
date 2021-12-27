@@ -6,6 +6,7 @@ public class Array_prac {
         }
         return sum;
     }
+
     public static int max(int[] m) {
         int max_num = m[0];
         for (int i = 0; i < m.length; i++) {
@@ -15,6 +16,7 @@ public class Array_prac {
         }
         return max_num;
     }
+
     public static void main(String[] args) {
         int[] numbers ={9, 2, 15, 2, 22, 10, 6};
 
@@ -29,5 +31,6 @@ public class Array_prac {
         cs2.cd();
         Achilles_tortoise.b=3;
         System.out.println(Achilles_tortoise.b);
+
     }
 }

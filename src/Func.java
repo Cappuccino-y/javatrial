@@ -1,3 +1,6 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 public class Func {
     public static int max (int x, int y){
         if (x>y){
@@ -6,7 +9,10 @@ public class Func {
             return y;
         }
     }
-    public static void draw_triangle(int x) {
+
+    @Test
+    public void draw_triangle() {
+        int x=123;
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < i+1;j++){
                 System.out.print('*');
@@ -14,13 +20,5 @@ public class Func {
             System.out.print('\n');
         }
     }
-    public static void main (String[] args) {
-        System.out.println(max(7,2));
-        double[] numbers = new double[]{4, 7.0, 10};
-        System.out.println(numbers.length);
-        SLList C= new SLList(234);
-        C.addFirst(32);
-        System.out.println(C.get(1));
 
-    }
 }

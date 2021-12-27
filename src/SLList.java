@@ -1,27 +1,27 @@
 public class SLList {
     private IntNode sentinel;
+    private IntNode last;
     private int size_num;
     public SLList(int x){
         sentinel = new IntNode(231,null);
         sentinel.next =new IntNode(x,null);
+        last =  sentinel.next;
         size_num=1;
     }
     public SLList(){
         sentinel = new IntNode(231,null);
+        last =  sentinel;
         size_num=0;
     }
 
-    public void addLast(int x){
+    public void addFirst(int x){
         sentinel.next = new IntNode(x, sentinel.next);
         size_num=size_num+1;
     }
 
-    public void addFirst(int x){
-        IntNode pointer = sentinel;
-        while (pointer.next!=null){
-            pointer = pointer.next;
-        }
-        pointer.next = new IntNode (x,null);
+    public void addLast(int x){
+        last.next = new IntNode(x, null);
+        last = last.next;
         size_num=size_num+1;
     }
 
@@ -35,14 +35,11 @@ public class SLList {
 
     public static void main(String[] args) {
         SLList C= new SLList(234);
-        C.addLast(32);
         C.addFirst(26);
         C.addFirst(2312);
-        C.addFirst(2312);
-        C.addFirst(2312);
-        C.addFirst(2312);
-        C.addFirst(2312);
-        System.out.println(C.size());
+        C.addFirst(2364);
+        C.addLast(32);
+        System.out.println(C.get(0));
     }
 
     private static class IntNode {
@@ -72,11 +69,11 @@ public class SLList {
             }
         }
         public int get(int i){
-            if (i==size()-1){
+            if (i==0){
                 return item;
             }
             else{
-                return next.get(i);
+                return next.get(i-1);
             }
         }
         public static IntNode incrList(IntNode L,int x){
