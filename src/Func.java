@@ -9,7 +9,7 @@ public class Func {
             return y;
         }
     }
-
+    
     @Test
     public void draw_triangle() {
         int x=123;

@@ -15,4 +15,11 @@ public interface Deque<T> {
 
     T get(int index);
 
+    default void asd() {
+        printDeque();
+    }
+
+    default void asd2() {
+        printDeque();
+    }
 }

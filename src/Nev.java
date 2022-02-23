@@ -30,9 +30,8 @@ public class Nev<Item> extends ArrayDeque<Item> {
     }
 
     public void rotateRight() {
-        Item x = removeLast();
+        Item x = super.removeLast();
         addFirst(x);
-
     }
 
     public void printLostItems() {
